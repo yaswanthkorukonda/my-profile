@@ -1,0 +1,267 @@
+body {
+  background: #1b1b25;
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+}
+.title {
+  text-align: center;
+
+  a {
+    color: #db4d57;
+    text-decoration: none;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+.icon {
+  width: 30px;
+  height: auto;
+}
+
+hr {
+  width: 75%;
+}
+
+.list-inline {
+  list-style: none;
+  margin: 20px 10px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.list-inline li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.list-inline a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-inline a:visited {
+  text-decoration: none;
+}
+
+.details {
+  max-width: 75%;
+  margin: 0 auto;
+  text-align: center;
+
+  & h2 {
+    text-decoration: underline;
+  }
+}
+
+.summary {
+  margin: 30px 0px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  margin: 20px 0; /* Adds space between sections */
+}
+
+.section-item {
+  display: flex;
+  justify-content: space-between; /* Spaces out items */
+  align-items: center; /* Vertically centers items */
+  /* border-bottom: 1px solid #ccc; Adds a bottom border for separation */
+  padding: 10px 0; /* Adds vertical padding */
+}
+
+.description {
+  flex: none; /* Takes 1 part of the available space */
+  text-align: center; /* Centers description content */
+}
+
+.time-period {
+  flex: 1; /* Takes 1 part of the available space */
+  text-align: right; /* Aligns time period to the right */
+}
+
+h4 {
+  margin: 0; /* Remove default margin */
+}
+
+p {
+  margin: 5px 0; /* Adds space between paragraphs */
+}
+
+/* Technical skills */
+.skills-section {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* .skills-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  } */
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill-card {
+  background-color: #2d2d39;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  min-height: 150px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: scale(1.1); /* Zooms in on hover */
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap; /* Allows icons to wrap to the next line */
+  justify-content: center; /* Centers icons horizontally within the card */
+  gap: 10px; /* Keeps spacing consistent */
+}
+
+.skill-item {
+  position: relative;
+  text-align: center;
+}
+
+.skill-item img {
+  width: 50px; /* Fixed size */
+  height: 50px;
+  object-fit: cover;
+  transition: opacity 0.3s ease; /* Smooth fade-out */
+}
+
+.skill-name {
+  color: #db4d57;
+  font-size: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the text */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* On hover, hide icon and show skill name */
+.skill-item:hover img {
+  opacity: 0; /* Fades out the icon */
+}
+
+.skill-item:hover .skill-name {
+  opacity: 1; /* Fades in the skill name */
+}
+
+/* Certifications */
+.certifications-section {
+  padding: 20px;
+}
+
+.certifications-section h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.certification-item p {
+  margin: 0;
+  font-size: 1em;
+}
+
+.certification-item a {
+  display: inline-block;
+}
+
+.certification-item img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.certification-item a:hover img {
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+
+/* Intrest/Hobbies */
+.intrests {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap if needed */
+  justify-content: center; /* Centers cards in the container */
+  align-items: center;
+}
+
+.card {
+  width: 480px; /* Set a wider size for the horizontal rectangle */
+  height: 240px; /* Set a height suitable for a rectangle */
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin: 16px; /* Add margin for spacing between cards */
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  display: block; /* Make the entire card clickable */
+  height: 100%; /* Ensures the anchor takes full height */
+  color: inherit; /* Inherit color from the card */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.card img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-out;
+}
+
+.card h2 {
+  position: absolute;
+  inset: auto auto 30px 30px;
+  margin: 0;
+  transition: inset 0.3s 0.3s ease-out;
+}
+
+.card p {
+  position: absolute;
+  opacity: 0;
+  inset: auto auto 80px 30px;
+  transition: opacity 0.3s ease-out;
+}
+
+.card:hover h2 {
+  inset: auto auto 50px 30px; /* Adjusted for the new card height */
+  transition: inset 0.3s ease-out;
+}
+
+.card:hover img {
+  transition: opacity 0.3s ease-in;
+  opacity: 1; /* Ensure image shows on hover */
+}
