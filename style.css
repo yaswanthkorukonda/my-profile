@@ -3,19 +3,83 @@ body {
   color: #fff;
   font-family: "Josefin Sans", sans-serif;
 }
-.title {
-  text-align: center;
 
-  a {
-    color: #db4d57;
-    text-decoration: none;
-    &:hover {
-      font-weight: bold;
-    }
-  }
+.resume-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
 }
 
-.icon {
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: inline-block;
+  
+}
+/* .profile-picture:hover{
+  box-shadow: 0 0 30px #db4d57;
+  transition: box-shadow 0.5s ease-out;
+  transform: scale(1.05);
+} */
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #666;
+  margin-top: 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.email-section {
+  margin-bottom: 15px;
+}
+
+.email-link {
+  text-decoration: none;
+  color: #db4d57;
+  transition: font-weight 0.3s ease;
+}
+
+.email-link:hover {
+  font-weight: bold;
+}
+
+.links-section {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.links-section a {
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.links-section a:last-child {
+  margin-right: 0;
+}
+
+.icon{
   width: 30px;
   height: auto;
 }
@@ -24,28 +88,7 @@ hr {
   width: 75%;
 }
 
-.list-inline {
-  list-style: none;
-  margin: 20px 10px;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.list-inline li {
-  display: inline;
-  margin-right: 10px;
-}
-
-.list-inline a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.list-inline a:visited {
-  text-decoration: none;
-}
+/* Details Section */
 
 .details {
   max-width: 75%;
@@ -69,20 +112,19 @@ hr {
 
 .section-item {
   display: flex;
-  justify-content: space-between; /* Spaces out items */
+  justify-content: space-between; /* Keeps items side-by-side */
   align-items: center; /* Vertically centers items */
-  /* border-bottom: 1px solid #ccc; Adds a bottom border for separation */
-  padding: 10px 0; /* Adds vertical padding */
 }
 
 .description {
   flex: none; /* Takes 1 part of the available space */
-  text-align: center; /* Centers description content */
+  text-align: left; /* Centers description content */
 }
 
 .time-period {
   flex: 1; /* Takes 1 part of the available space */
   text-align: right; /* Aligns time period to the right */
+  margin-top: 10px;
 }
 
 h4 {
@@ -100,10 +142,6 @@ p {
   margin-top: 20px;
 }
 
-/* .skills-section h3 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  } */
 
 .skills-grid {
   display: flex;
@@ -264,4 +302,88 @@ p {
 .card:hover img {
   transition: opacity 0.3s ease-in;
   opacity: 1; /* Ensure image shows on hover */
+}
+
+/* Container styling */
+.link-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Link button styling */
+.round-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #db4d57; /* Button color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px; /* Makes it rounded */
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.round-link:hover{
+  background-color: #fff;
+  color: #db4d57;
+}
+
+/* Icon styling (hidden initially) */
+.link-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  opacity: 0;
+  transform: translateX(-30px); /* Moves the icon further left initially */
+  transition: all 0.3s ease;
+}
+
+/* Text styling */
+.round-link span {
+  transition: all 0.3s ease;
+  margin-right: 15px;
+}
+
+/* Hover effect to display icon and adjust text */
+.round-link:hover .link-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.round-link:hover span {
+  transform: translateX(10px); /* Moves text to make space for icon */
+}
+
+
+
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .section-item {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .description {
+    flex: 1;
+    text-align: left;
+  }
+
+  .time-period {
+    flex: 1;
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  .link-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
